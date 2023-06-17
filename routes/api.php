@@ -23,3 +23,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 Route::resource('projects', MovieController::class)->middleware('auth:api');
+
+Route::group([
+    'namespace' => '\App\Http\Controllers\Api',
+    'middleware' => ['cors'],
+    'prefix' => 'v1'
+], function ($router) {
+    $router->post('/login', 'UserController@login');
+    $router->get('/logout', function () {
+        return null;
+    });
+});
+
+Route::group([
+    'namespace' => '\App\Http\Controllers\API',
+    'middleware' => ['auth:api'],
+    'prefix' => 'v1'
+], function ($router) {
+    // List movie
+    $router->post('/event/submit', 'MovieController@submit');
+    $router->post('/event/list', 'MovieController@list');
+});
