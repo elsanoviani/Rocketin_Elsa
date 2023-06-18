@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "57ff17ff-a7b7-4b8b-9744-6594dff97786",
+		"name": "RocketinElsa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10570637"
+	},
+	"item": [
+		{
+			"name": "list movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc1MTMxNmVlMDQ0NDJiZWE0ZTlhZTBlZTI0NTFlMDQyY2Y2ZTMwODEyNzMxMmQ0M2Y5MTkxMzU0OTlkZDYzNzVmZmFlNDE2YzdmODI3ODVkIn0.eyJhdWQiOiIxIiwianRpIjoiNzUxMzE2ZWUwNDQ0MmJlYTRlOWFlMGVlMjQ1MWUwNDJjZjZlMzA4MTI3MzEyZDQzZjkxOTEzNTQ5OWRkNjM3NWZmYWU0MTZjN2Y4Mjc4NWQiLCJpYXQiOjE2ODY5Nzg0MjUsIm5iZiI6MTY4Njk3ODQyNSwiZXhwIjoxNzE4NjAwODI1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.gMEe3ekZQFakKmNLnPRfRo8nzpvCGLDmbQtfKbKqiu1nPXTAc5tl007jxh9Sh6xhWgm7x7Z2AE-hLOpU4PKJkHezzCpBjNMRbN4VV1q3hpRlezi4BDFnviPZgegC3DT7ZMzxEGkmhZzu7B8Q_YHwAo6ZQfceLFGeNFhNsZ6sw2t5r7hoGlRtCZFWnFAjPlwTb41ExgNX92qaBmbca_cLw5-mT29OyghFfchPid3zE0GB8pEUCHoyWC330bnmGeVzmnBg080xtULP3tE_mRyylgGh5ZRABsT_wedfXDQQiSAp9Umse602WX3NIRGtAoK6uuoNZnTfXYyENpso-6YxKrqcsjK5NHXEZXy71YBQ0XaOlZj9QSoDo5_rsGR5wUrQsUS08y7kDo5QwWyeWsiifLPVuA79O9hmAQqvBOZzTjVndNsYdZjGmuOQ5mU1OFjb1GDVxj_5uoGCLLuki8V8U_a8EgVynJza_07ixQjX1h3qiu68liUia3COOBXe2YGzWwrheIERClvXXIj4CloogD7csBYmLp8-Q6UcSFfdOkoNHBC_TgcLu3gzM91KNujJQ8VRwigtXmP0Bf4tAsLcucf1DUyVwjcgKPanVY2VYLCrBUPNrd8CoB2bV35SapiFsRlgQH6Gv83E5818vRNmAWNbuusF_MCBYKeEn3jYKsA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"page\": 1,\n    \"per_page\": 10,\n    \"filter\":\"\",\n    \"order_by\":\"watch_url\",\n    \"order\": \"ASC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/event/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"event",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submit movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc1MTMxNmVlMDQ0NDJiZWE0ZTlhZTBlZTI0NTFlMDQyY2Y2ZTMwODEyNzMxMmQ0M2Y5MTkxMzU0OTlkZDYzNzVmZmFlNDE2YzdmODI3ODVkIn0.eyJhdWQiOiIxIiwianRpIjoiNzUxMzE2ZWUwNDQ0MmJlYTRlOWFlMGVlMjQ1MWUwNDJjZjZlMzA4MTI3MzEyZDQzZjkxOTEzNTQ5OWRkNjM3NWZmYWU0MTZjN2Y4Mjc4NWQiLCJpYXQiOjE2ODY5Nzg0MjUsIm5iZiI6MTY4Njk3ODQyNSwiZXhwIjoxNzE4NjAwODI1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.gMEe3ekZQFakKmNLnPRfRo8nzpvCGLDmbQtfKbKqiu1nPXTAc5tl007jxh9Sh6xhWgm7x7Z2AE-hLOpU4PKJkHezzCpBjNMRbN4VV1q3hpRlezi4BDFnviPZgegC3DT7ZMzxEGkmhZzu7B8Q_YHwAo6ZQfceLFGeNFhNsZ6sw2t5r7hoGlRtCZFWnFAjPlwTb41ExgNX92qaBmbca_cLw5-mT29OyghFfchPid3zE0GB8pEUCHoyWC330bnmGeVzmnBg080xtULP3tE_mRyylgGh5ZRABsT_wedfXDQQiSAp9Umse602WX3NIRGtAoK6uuoNZnTfXYyENpso-6YxKrqcsjK5NHXEZXy71YBQ0XaOlZj9QSoDo5_rsGR5wUrQsUS08y7kDo5QwWyeWsiifLPVuA79O9hmAQqvBOZzTjVndNsYdZjGmuOQ5mU1OFjb1GDVxj_5uoGCLLuki8V8U_a8EgVynJza_07ixQjX1h3qiu68liUia3COOBXe2YGzWwrheIERClvXXIj4CloogD7csBYmLp8-Q6UcSFfdOkoNHBC_TgcLu3gzM91KNujJQ8VRwigtXmP0Bf4tAsLcucf1DUyVwjcgKPanVY2VYLCrBUPNrd8CoB2bV35SapiFsRlgQH6Gv83E5818vRNmAWNbuusF_MCBYKeEn3jYKsA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "adam",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "s",
+							"type": "text"
+						},
+						{
+							"key": "artists",
+							"value": "a",
+							"type": "text"
+						},
+						{
+							"key": "duration",
+							"value": "s",
+							"type": "text"
+						},
+						{
+							"key": "genres",
+							"value": "s",
+							"type": "text"
+						},
+						{
+							"key": "watch_url",
+							"type": "file",
+							"src": "/Users/mutiaraclarisa/Desktop/Screen Shot 2023-06-10 at 09.43.21.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/event/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"event",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIzODA1MWZiM2E3NDhjNTM5NTA5M2VlZTU0ZWY4MDQ3MWM3NDIxNDEwYTAyNzE4MjY4NDNiNzJlZDkyMjZkYTViZTFlY2UyNmIxNGI4NGYwIn0.eyJhdWQiOiIzIiwianRpIjoiMjM4MDUxZmIzYTc0OGM1Mzk1MDkzZWVlNTRlZjgwNDcxYzc0MjE0MTBhMDI3MTgyNjg0M2I3MmVkOTIyNmRhNWJlMWVjZTI2YjE0Yjg0ZjAiLCJpYXQiOjE2ODcwNzc4ODQsIm5iZiI6MTY4NzA3Nzg4NCwiZXhwIjoxNzE4NzAwMjg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.tmBmJIbzyQCVHCUAmiPBh6r8k76NbQHXP_ZEhHNX8hsbfUEkKUfrFGHpsNkwpkghXGys0c7W192bttROjbUP_6mMsOpMqvqOC2wlrH2lkRTiUbAn6wtJn7E4uAvOjU0g2aYOmGRSUCO0EI5QB7IyrqM9lb1vWGcpgbJBYLPvN2Uny3FC4Gh5y_yTE04VP4GjYhVjChDPpkWEdKQHls4hIUAv_hBDBwRwpPXOZwa2BDf3zZ894ZuyAFWYTJ-lBmFZbyQRAJI7eNwMLcDjrcmeFdWhq-nUn-uCapcYPNSmCziORz5ZFE-TwRwqI6JZKk3407_8MKVHcwj7Dt9-thJ7Nzox3up5HCycVe7UfugxqRsLPDJ3A3e4UP37DOf2nmdltDiUpyXX8zVfWAeHZmnlk-oi8yyHZch8twTAq_ic-rz-0yQNvNgxXJ9LIBenB_VtdiXeYdlA3oOSJql9LiOe-ngL7xgHuLFSvTWjKbkJ1i2-jrOSYtNsUcBWiKKpbNwJhM8vojr0F-eHhN1a46dgiRBKe663lsHjXlwAXYIMpmsXSzQ80V1-At2pa9PQUZD6499z2unXHuepFMKMC8x_uvxsuQTGi5sLE87qESnOSTustDcto7Wd9byNxVdIg1d0D9ZGUSFptt2gIWWljUgMliKrGp9wmB6mtgLG9nGmMJk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "ss",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "juju",
+							"type": "text"
+						},
+						{
+							"key": "duration",
+							"value": "ss",
+							"type": "text"
+						},
+						{
+							"key": "artists",
+							"value": "ss",
+							"type": "text"
+						},
+						{
+							"key": "genres",
+							"value": "ss",
+							"type": "text"
+						},
+						{
+							"key": "watch_url",
+							"type": "file",
+							"src": "/Users/mutiaraclarisa/Desktop/Screen Shot 2023-06-17 at 12.38.02.png"
+						},
+						{
+							"key": "id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/event/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"event",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "budi",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "budi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "budi12345",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "budi12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImQ2YzYxMGIwMGNiNWZhNjAyYWUyM2I5MTQzMjYzODkxYzIxZmVjNmQ2NGE1MTAxZTc4YmRlMGRkNDkxZTAxM2NlY2JhZjQxNWQzYmQ0MjM3In0.eyJhdWQiOiIxIiwianRpIjoiZDZjNjEwYjAwY2I1ZmE2MDJhZTIzYjkxNDMyNjM4OTFjMjFmZWM2ZDY0YTUxMDFlNzhiZGUwZGQ0OTFlMDEzY2VjYmFmNDE1ZDNiZDQyMzciLCJpYXQiOjE2ODY4MjA0ODMsIm5iZiI6MTY4NjgyMDQ4MywiZXhwIjoxNzE4NDQyODgzLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.fEBiJ6ZxDCzqmEf6yzUeBx3ytzMDoE2VoGEM0LA-j8QZLNOoCCbtbWYJh3ECeb1u8yJxYjx191lgCZu6kM7u8VwZS0QXpE-gxkO5wKxVlx6NvnRrSCrvWZFDP7mA1AJ0jTb4rLWtYxI9FjfZrrdE3RpPHm5YIrRUvazhro2LgpyZk0GoZ5cphl8R89AqhXzkBQ9XkO_Q4SL_DB_40A5fMoGCXHuaFv854ABgSdH1hlEo7ppGs-XVt4rFSoHBlE0MWGSFp7oflfuZsbklAuwCWCeGK_sc4q3G_V6nm-WlPB5ixnqcoAT2yFD9QfmvTsmAeg_J-4Vmg1yn3eCWtoa3rDwc7RTPeobWss1rAPL0MF9wC1J3ep08SUDZMCvE9vb-CA57aTHxvue5mv_x4weMDKNFUYi8syza_q6WJ7mKLH8vJJVVVVt8bqtftS9sDpasYt1kEOoBbPPtaZAkXzwciufJ1yA08cS-cfgMp-ZvWdTZoqP6kNRntnCznOQb1a9GUzlQP-HFwroeLTY85vTTL5m7-cXOguk1VO2eU3v33_eyEzH4AJlglUJOaIbBlBiIkF0W5aFcXv9a1c1xjr__JvUzuPx30lwP5NNvlg5pJ9uC8pFfs-ipt5cswnDQlw-ABZTPoVozKIW-YcJR8rFyYbMbsewy4MEhjXj5jIZ1bHI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "budi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "budi12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list viewer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIzODA1MWZiM2E3NDhjNTM5NTA5M2VlZTU0ZWY4MDQ3MWM3NDIxNDEwYTAyNzE4MjY4NDNiNzJlZDkyMjZkYTViZTFlY2UyNmIxNGI4NGYwIn0.eyJhdWQiOiIzIiwianRpIjoiMjM4MDUxZmIzYTc0OGM1Mzk1MDkzZWVlNTRlZjgwNDcxYzc0MjE0MTBhMDI3MTgyNjg0M2I3MmVkOTIyNmRhNWJlMWVjZTI2YjE0Yjg0ZjAiLCJpYXQiOjE2ODcwNzc4ODQsIm5iZiI6MTY4NzA3Nzg4NCwiZXhwIjoxNzE4NzAwMjg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.tmBmJIbzyQCVHCUAmiPBh6r8k76NbQHXP_ZEhHNX8hsbfUEkKUfrFGHpsNkwpkghXGys0c7W192bttROjbUP_6mMsOpMqvqOC2wlrH2lkRTiUbAn6wtJn7E4uAvOjU0g2aYOmGRSUCO0EI5QB7IyrqM9lb1vWGcpgbJBYLPvN2Uny3FC4Gh5y_yTE04VP4GjYhVjChDPpkWEdKQHls4hIUAv_hBDBwRwpPXOZwa2BDf3zZ894ZuyAFWYTJ-lBmFZbyQRAJI7eNwMLcDjrcmeFdWhq-nUn-uCapcYPNSmCziORz5ZFE-TwRwqI6JZKk3407_8MKVHcwj7Dt9-thJ7Nzox3up5HCycVe7UfugxqRsLPDJ3A3e4UP37DOf2nmdltDiUpyXX8zVfWAeHZmnlk-oi8yyHZch8twTAq_ic-rz-0yQNvNgxXJ9LIBenB_VtdiXeYdlA3oOSJql9LiOe-ngL7xgHuLFSvTWjKbkJ1i2-jrOSYtNsUcBWiKKpbNwJhM8vojr0F-eHhN1a46dgiRBKe663lsHjXlwAXYIMpmsXSzQ80V1-At2pa9PQUZD6499z2unXHuepFMKMC8x_uvxsuQTGi5sLE87qESnOSTustDcto7Wd9byNxVdIg1d0D9ZGUSFptt2gIWWljUgMliKrGp9wmB6mtgLG9nGmMJk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"page\": 1,\n    \"per_page\": 10,\n    \"filter\":\"\",\n    \"order_by\":\"\",\n    \"order\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/viewer/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"viewer",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viewer submit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIzODA1MWZiM2E3NDhjNTM5NTA5M2VlZTU0ZWY4MDQ3MWM3NDIxNDEwYTAyNzE4MjY4NDNiNzJlZDkyMjZkYTViZTFlY2UyNmIxNGI4NGYwIn0.eyJhdWQiOiIzIiwianRpIjoiMjM4MDUxZmIzYTc0OGM1Mzk1MDkzZWVlNTRlZjgwNDcxYzc0MjE0MTBhMDI3MTgyNjg0M2I3MmVkOTIyNmRhNWJlMWVjZTI2YjE0Yjg0ZjAiLCJpYXQiOjE2ODcwNzc4ODQsIm5iZiI6MTY4NzA3Nzg4NCwiZXhwIjoxNzE4NzAwMjg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.tmBmJIbzyQCVHCUAmiPBh6r8k76NbQHXP_ZEhHNX8hsbfUEkKUfrFGHpsNkwpkghXGys0c7W192bttROjbUP_6mMsOpMqvqOC2wlrH2lkRTiUbAn6wtJn7E4uAvOjU0g2aYOmGRSUCO0EI5QB7IyrqM9lb1vWGcpgbJBYLPvN2Uny3FC4Gh5y_yTE04VP4GjYhVjChDPpkWEdKQHls4hIUAv_hBDBwRwpPXOZwa2BDf3zZ894ZuyAFWYTJ-lBmFZbyQRAJI7eNwMLcDjrcmeFdWhq-nUn-uCapcYPNSmCziORz5ZFE-TwRwqI6JZKk3407_8MKVHcwj7Dt9-thJ7Nzox3up5HCycVe7UfugxqRsLPDJ3A3e4UP37DOf2nmdltDiUpyXX8zVfWAeHZmnlk-oi8yyHZch8twTAq_ic-rz-0yQNvNgxXJ9LIBenB_VtdiXeYdlA3oOSJql9LiOe-ngL7xgHuLFSvTWjKbkJ1i2-jrOSYtNsUcBWiKKpbNwJhM8vojr0F-eHhN1a46dgiRBKe663lsHjXlwAXYIMpmsXSzQ80V1-At2pa9PQUZD6499z2unXHuepFMKMC8x_uvxsuQTGi5sLE87qESnOSTustDcto7Wd9byNxVdIg1d0D9ZGUSFptt2gIWWljUgMliKrGp9wmB6mtgLG9nGmMJk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "weli",
+							"type": "text"
+						},
+						{
+							"key": "id_movie",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/viewer/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"viewer",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viewer update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIzODA1MWZiM2E3NDhjNTM5NTA5M2VlZTU0ZWY4MDQ3MWM3NDIxNDEwYTAyNzE4MjY4NDNiNzJlZDkyMjZkYTViZTFlY2UyNmIxNGI4NGYwIn0.eyJhdWQiOiIzIiwianRpIjoiMjM4MDUxZmIzYTc0OGM1Mzk1MDkzZWVlNTRlZjgwNDcxYzc0MjE0MTBhMDI3MTgyNjg0M2I3MmVkOTIyNmRhNWJlMWVjZTI2YjE0Yjg0ZjAiLCJpYXQiOjE2ODcwNzc4ODQsIm5iZiI6MTY4NzA3Nzg4NCwiZXhwIjoxNzE4NzAwMjg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.tmBmJIbzyQCVHCUAmiPBh6r8k76NbQHXP_ZEhHNX8hsbfUEkKUfrFGHpsNkwpkghXGys0c7W192bttROjbUP_6mMsOpMqvqOC2wlrH2lkRTiUbAn6wtJn7E4uAvOjU0g2aYOmGRSUCO0EI5QB7IyrqM9lb1vWGcpgbJBYLPvN2Uny3FC4Gh5y_yTE04VP4GjYhVjChDPpkWEdKQHls4hIUAv_hBDBwRwpPXOZwa2BDf3zZ894ZuyAFWYTJ-lBmFZbyQRAJI7eNwMLcDjrcmeFdWhq-nUn-uCapcYPNSmCziORz5ZFE-TwRwqI6JZKk3407_8MKVHcwj7Dt9-thJ7Nzox3up5HCycVe7UfugxqRsLPDJ3A3e4UP37DOf2nmdltDiUpyXX8zVfWAeHZmnlk-oi8yyHZch8twTAq_ic-rz-0yQNvNgxXJ9LIBenB_VtdiXeYdlA3oOSJql9LiOe-ngL7xgHuLFSvTWjKbkJ1i2-jrOSYtNsUcBWiKKpbNwJhM8vojr0F-eHhN1a46dgiRBKe663lsHjXlwAXYIMpmsXSzQ80V1-At2pa9PQUZD6499z2unXHuepFMKMC8x_uvxsuQTGi5sLE87qESnOSTustDcto7Wd9byNxVdIg1d0D9ZGUSFptt2gIWWljUgMliKrGp9wmB6mtgLG9nGmMJk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "wela",
+							"type": "text"
+						},
+						{
+							"key": "id_movie",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/viewer/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"viewer",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

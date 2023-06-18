@@ -28,7 +28,7 @@ class MovieRepository
             if (strlen($rawData['order_by']) > 0) {
                 $data = $data->orderBy($rawData['order_by'], $rawData['order']);
              } else {
-                $data = $data->orderBy('movie_projects.created_at desc');
+                $data = $data->orderBy('movie_projects.created_at','desc');
              }
 
         $datas = $data->paginate($rawData['per_page']);
@@ -39,5 +39,18 @@ class MovieRepository
     public static function submit($rawData)
     {
         Project::create($rawData);
+    }
+
+    public static function movieById($id)
+    {
+        $datas = Project::selectRaw('title,description,duration,artists,genres,watch_url')
+            ->where('id', $id)->first();
+
+        return $datas;
+    }
+
+    public static function action($id, $rawData)
+    {
+        Project::whereIn('id', $id)->update($rawData);
     }
 }

@@ -72,7 +72,7 @@ class MovieController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function updateData(Request $request, Project $project)
     {
         $project->update($request->all());
 
@@ -159,6 +159,60 @@ class MovieController extends Controller
                     ];
 
                     $this->movieRepo->submit($rawData);
+
+                    $result = ['message' => 'success', 'data' => $rawData];
+                    return $this->returnJsonSuccess($result);
+
+                }
+            } catch (\Exception $e) {
+                $result = [
+                    'code'      => 400,
+                    'message'   => $e->getMessage(),
+                    'data'      => (object)[]
+                ];
+            }
+        
+        return response()->json($result, 202);
+    }
+
+    public function update(Request $request)
+    {
+        $hasError = $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'duration' => 'required',
+            'artists' => 'required',
+            'genres' => 'required',
+            'watch_url' => 'required|file|mimes:png'
+        ]);
+
+            try {
+                $fileName = $request->watch_url->getClientOriginalName();
+                $filePath = 'videos/' . $fileName;
+        
+                $isFileUploaded = Storage::disk('public')->put($filePath, file_get_contents($request->watch_url));
+        
+                // File URL to access the video in frontend
+                $url = Storage::disk('public')->url($filePath);
+        
+                if ($isFileUploaded) {
+        
+                    $rawData = [
+                        'title' => $request['title'],
+                        'description' => $request['description'],
+                        'duration' => $request['duration'],
+                        'artists' => $request['artists'],
+                        'genres' => $request['genres'],
+                        'watch_url' => $filePath
+                    ];
+
+                    $dataExisting= $this->movieRepo->movieById($request['id']);
+                    if (empty($dataExisting)) {
+                        $result = ['code' => 403, 'message' => 'Id section tidak valid.', 'data' => (object)[]];
+                        return response()->json($result, 202);
+                    }
+
+                    $this->movieRepo->action([$request['id']], $rawData);
 
                     $result = ['message' => 'success', 'data' => $rawData];
                     return $this->returnJsonSuccess($result);

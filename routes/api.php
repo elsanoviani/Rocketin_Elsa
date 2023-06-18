@@ -43,4 +43,10 @@ Route::group([
     // List movie
     $router->post('/event/submit', 'MovieController@submit');
     $router->post('/event/list', 'MovieController@list');
+    $router->post('/event/update', 'MovieController@update');
+
+    //list viewer
+    $router->post('/viewer/submit', 'ViewerController@submit');
+    $router->post('/viewer/list', 'ViewerController@list');
+    $router->post('/viewer/update', 'ViewerController@update');
 });
